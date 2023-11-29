@@ -1,9 +1,9 @@
 ThisBuild / version      := "0.1.0"
-ThisBuild / scalaVersion := "2.13.9"
+ThisBuild / scalaVersion := "2.13.12"
 
 lazy val artifacts = new {
   // artifacts version
-  val akkaVersion      = "2.6.20"
+  val akkaVersion      = "2.8.0"
   val akkaHttpVersion  = "10.2.9"
   val logbackVersion   = "1.4.7"
   val scalaTestVersion = "3.2.15"
@@ -30,9 +30,9 @@ lazy val sharedSettings = Seq(
     "-Ywarn-dead-code", // Warn when dead code is identified.
     "-Ywarn-unused:imports,patvars,privates,locals,explicits,implicits"
   ),
-  libraryDependencies ++= artifacts.akkaTyped ++ artifacts.akkaTest ++ artifacts.scalaTest
+  libraryDependencies ++= artifacts.akkaTyped ++ artifacts.akkaTest ++ artifacts.scalaTest ++ artifacts.scalaLogging
 )
 
 lazy val chapter02 = project
   .in(file("chapter02"))
-  .settings(sharedSettings, libraryDependencies ++= artifacts.akkaClassic)
+  .settings(sharedSettings)
