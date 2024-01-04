@@ -36,3 +36,12 @@ lazy val sharedSettings = Seq(
 lazy val chapter02 = project
   .in(file("chapter02"))
   .settings(sharedSettings)
+
+lazy val chapter03 = project
+  .in(file("chapter03"))
+  .settings(sharedSettings)
+
+
+lazy val chapter04 = project
+  .in(file("chapter04"))
+  .settings(sharedSettings)
